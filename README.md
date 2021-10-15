@@ -4,9 +4,12 @@
 You can use C to develop HMI in android without java android-api , and can run app in cmdline directly. ideally situated for bsp and mcu engineers to develop HMI in android,who familiarize with lvgl
 
 Now support the following feature:
-1.support input dev such as touch-screen , can drag lvgl-app-window position in android-display
-2.support alpha-channel,means lvgl app can display over or under other android-app and blend to display
-3.remove hardware-accelerate code to make this project simplest and more generic to port
+
+- support input dev such as touch-screen , can drag lvgl-app-window position in android-disp1. 
+- support alpha-channel,means lvgl app can display over or under other android-app and blend to display
+- remove hardware-accelerate code to make this project simplest and more generic to port
+
+
 
 #### 软件架构
 Based on lvgl8.0.0 ,you can upgrade by yourself
@@ -14,10 +17,10 @@ Based on lvgl8.0.0 ,you can upgrade by yourself
 
 #### 安装教程
 
-1.  download code to your android project external dir
+1.  Download code to your android project external dir
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/1015/135236_9d702f3f_143175.png "屏幕截图.png")
 
-2.  compile liblvgl.a(or get liblvgl.a from me ,you can skip this step)
+2.  Compile liblvgl.a(or get liblvgl.a from me ,you can skip this step),need cmake,recommend cmake-3.21.1
 
 ```
 	cd /external/lvgl/lvgl/build
@@ -26,31 +29,28 @@ Based on lvgl8.0.0 ,you can upgrade by yourself
 	make -j16
 
 ```
-note you need modify cross_compile.cmake according to your ndk-toolschain
+Note you need modify cross_compile.cmake according to your ndk-toolschain
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/1015/135447_db4f7716_143175.png "屏幕截图.png")
 
 
-3.  compile demo-app ,we support
+3.  Compile demo-app by android-mk/mmm ,we support two demo to show you,how to use lvgl-api in android 
 
-#### 使用说明
+```
+mmm ./external/lvgl/ -j16
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```
+![输入图片说明](https://images.gitee.com/uploads/images/2021/1015/141447_b23c12f7_143175.png "屏幕截图.png")
+
+#### 移植使用说明
+
+1.  Change input dev node according to your platform,just modify evdev.cpp
+![输入图片说明](https://images.gitee.com/uploads/images/2021/1015/141723_6b57a87f_143175.png "屏幕截图.png")
+2.  Change demo1 and demo2 to compile,just modify test.cpp
+![输入图片说明](https://images.gitee.com/uploads/images/2021/1015/141949_df5dbad0_143175.png "屏幕截图.png")
 
 #### 参与贡献
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+Welcome to use this project in your product ,such as factory-mode-hmi,selftest-hmi by bsp-driver , fastcamera-hmi
 
 
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+#### 图片演示
