@@ -55,3 +55,7 @@ Welcome to use this project in your product ,such as factory-mode-hmi,selftest-h
 
 #### 图片演示
 1.alpha blending display
+![Image text](https://gitee.com/lxiaogao/res-gif/raw/master/button.gif)
+2.official music-demo 
+![Image text](https://gitee.com/lxiaogao/res-gif/raw/master/music.gif)
+
